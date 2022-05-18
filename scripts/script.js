@@ -16,6 +16,29 @@ compChoiceButton.addEventListener('click',function(){
     let i = compChoice;
     console.log(compChoice);
     displayScore.innerText = `computer chose ${choiceArr[i]}`
+    setTimeout(() => {
+        if(compChoice == playerChoice){
+            displayScore.innerText = `this is a draw`;
+        }
+        else if(compChoice == 0 && playerChoice == 1 || compChoice == 0 && playerChoice == 4){
+            displayScore.innerText = `you win`;
+        }
+        else if(compChoice == 1 && playerChoice == 2 || compChoice == 1 && playerChoice ==3 ){
+            displayScore.innerText = `you win`;
+        }
+        else if(compChoice == 2 && playerChoice == 0 || compChoice == 2 && playerChoice == 4){
+            displayScore.innerText = `you win`;
+        }
+        else if(compChoice == 3 && playerChoice == 0 || compChoice == 3 && playerChoice == 2){
+            displayScore.innerText = `you win`;
+        }
+        else if (compChoice == 4 && playerChoice == 1 || compChoice == 4 && playerChoice == 3){
+            displayScore.innerText = `you win`;
+        }
+        else{
+            displayScore.innerText = `you loose`;
+        }
+    }, 2000); 
 })
 rockButton.addEventListener('click',()=>{
     playerChoice =0;
@@ -42,28 +65,4 @@ spockButton.addEventListener('click',()=>{
     let i = playerChoice;
     displayScore.innerText= `you chose ${choiceArr[i]}`;
 })
-generate.addEventListener('click',()=>{
-    console.log(compChoice);
-    console.log(playerChoice)
-    if(compChoice == playerChoice){
-        displayScore.innerText = `this is a draw`;
-    }
-    else if(compChoice == 0 && playerChoice == 1 || compChoice == 0 && playerChoice == 4){
-        displayScore.innerText = `you win`;
-    }
-    else if(compChoice == 1 && playerChoice == 2 || compChoice == 1 && playerChoice ==3 ){
-        displayScore.innerText = `you win`;
-    }
-    else if(compChoice == 2 && playerChoice == 0 || compChoice == 2 && playerChoice == 4){
-        displayScore.innerText = `you win`;
-    }
-    else if(compChoice == 3 && playerChoice == 0 || compChoice == 3 && playerChoice == 2){
-        displayScore.innerText = `you win`;
-    }
-    else if (compChoice == 4 && playerChoice == 1 || compChoice == 4 && playerChoice == 3){
-        displayScore.innerText = `you win`;
-    }
-    else{
-        displayScore.innerText = `you loose`;
-    }
-})
+
